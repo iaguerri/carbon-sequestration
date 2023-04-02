@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  jupyter:
+    build: ./jupyter
+    image: jupyter:latest
+    container_name: carbon_sequestration
+    working_dir: /app
+    command: jupyter notebook --ip 0.0.0.0 --allow-root
+    volumes:
+      - .:/app
+    ports:
+      - "8898:8898"
+  postgres:
+    image: postgis/postgis
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
