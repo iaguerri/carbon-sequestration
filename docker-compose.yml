@@ -9,7 +9,7 @@ services:
     volumes:
       - .:/app
     ports:
-      - "8898:8898"
+      - "8888:8888"
   postgres:
     image: postgis/postgis
     restart: always
