@@ -28,3 +28,5 @@ geopy
 geopandas
 
 xarray
+
+geemap
